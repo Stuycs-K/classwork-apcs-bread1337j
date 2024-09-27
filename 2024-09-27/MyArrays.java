@@ -10,6 +10,15 @@ public class MyArrays{
         }
         return str;
     }
+    public static int[] returnCopy(int[] arr){
+    	int[] copy = new int[arr.length];
+	for(int i=0; i<arr.length; i++){
+	    copy[i] = arr[i];
+	}
+	return copy;
+    }
+
+
     public static boolean testReturnCopy(int[] arr){
         return(returnCopy(arr) == arr.clone());
     }

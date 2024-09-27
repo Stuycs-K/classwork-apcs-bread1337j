@@ -10,7 +10,24 @@ public class MyArrays{
         }
         return str;
     }
-    
+    public static boolean testReturnCopy(int[] arr){
+        return(returnCopy(arr) == arr.clone());
+    }
+    public static boolean testConcatArr(int[] arr1, int[] arr2){
+        int[] concatarr = concatArr(arr1, arr2);
+        for(int i=0; i<concatarr.length; i++){
+            if(i<arr1.length){
+                if(concatarr[i] != arr1[i]){
+                    return false;
+                }
+            }else{
+                if(concatarr[i]!=arr2[i-arr1.length]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     public static void main(String[] args){
 
     }

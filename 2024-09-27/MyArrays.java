@@ -17,7 +17,16 @@ public class MyArrays{
 	}
 	return copy;
     }
-
+    public static int[] concatArr(int[] arr1, int[] arr2){
+        int[] concatarr = new int[arr1.length+arr2.length];
+	for(int i=0; i<arr1.length; i++){
+	    concatarr[i]=arr1[i];
+	}
+	for(int i=arr1.length; i<arr1.length+arr2.length; i++){
+	    concatarr[i]=arr2[i-arr1.length];
+	}
+	return concatarr;
+    }
 
     public static boolean testReturnCopy(int[] arr){
         return(returnCopy(arr) == arr.clone());

@@ -8,13 +8,15 @@ public class MyArrays{
         if(str.length() > 3){
             str = str.substring(0, str.length()-2); //could definitely write this better but whatveer
         }
-        return str;
+        return str + "]";
     }
     public static int[] returnCopy(int[] arr){
     	int[] copy = new int[arr.length];
 	for(int i=0; i<arr.length; i++){
 	    copy[i] = arr[i];
 	}
+	System.out.println(arrayToString(copy));
+	System.out.println(arrayToString(arr));
 	return copy;
     }
     public static int[] concatArr(int[] arr1, int[] arr2){
@@ -29,7 +31,13 @@ public class MyArrays{
     }
 
     public static boolean testReturnCopy(int[] arr){
-        return(returnCopy(arr) == arr.clone());
+        int[] copy = arr.clone();
+	for(int i=0; i<arr.length; i++){
+	    if(arr[i] != copy[i]){
+		    return false;
+	    }
+	}
+	return true;
     }
     public static boolean testConcatArr(int[] arr1, int[] arr2){
         int[] concatarr = concatArr(arr1, arr2);
@@ -44,10 +52,17 @@ public class MyArrays{
                 }
             }
         }
+	
         return true;
     }
     public static void main(String[] args){
-
+	System.out.println(testReturnCopy(new int[]{1, 2, 3}));
+	System.out.println(testConcatArr(new int[]{1, 2, 3}, new int[]{4, 5, 6}));
+   
+   
+   
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 import java.util.Arrays;
 public class ArrayDemo{
   static int[][] arr1 = new int[][]{{0,0,0},{1,1,0},{},{0,0,1},{1,1,1,1,1,0,1,1,1}};
+  static int[][] arr2 = new int[][]{{-1, -2, 3}, {4, -5, 6}, {7, 8, -9}};
   public static void main(String[]args){
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
@@ -13,6 +14,8 @@ public class ArrayDemo{
     System.out.println("arr2DSum");
     System.out.println("[[0, 0, 0], [1, 1, 0], [], [0, 0, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1]] -> 11 | " + arr2DSum(arr1));
 
+    replaceNegative(arr2);
+    System.out.println("[[1, 0, 3], [4, 1, 6], [7, 8, 1]] | " + arrToString(arr2));
   }
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]arr){
@@ -23,7 +26,13 @@ public class ArrayDemo{
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
   public static String arrToString(int[][]arr){
-    return Arrays.toString(arr);
+    String s = "[";
+        for(int[] i : arr){
+            s += arrToString(i);
+            s += ", ";
+        }
+        s=s.substring(0, s.length() - 2);
+        return s + "]";
   }
 
   //1. Calculate and return how many elements equal zero in the 2D array.
@@ -60,9 +69,22 @@ public class ArrayDemo{
   //-When the row number is the same as the column number replace
   //that negative with the value 1
   //-All other negatives replace with 0
+  //already did this for a homework
   public static void replaceNegative(int[][] vals){
-
-  }
+        for(int i=0; i<vals.length; i++){
+            for(int j=0; j<vals.length; j++){
+                if(j==i){
+                    if(vals[i][j] < 0){
+                        vals[i][j] = 1;
+                    }
+                }else{
+                    if(vals[i][j] < 0){
+                        vals[i][j] = 0;
+                    }
+                }
+            }
+        }
+    }
 
   //4. Make a copy of the given 2d array.
   //When testing : make sure that changing the original does NOT change the copy.

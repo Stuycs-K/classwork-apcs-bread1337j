@@ -1,28 +1,37 @@
 import java.util.Arrays;
 public class ArrayDemo{
+  static int[][] arr1 = new int[][]{{0,0,0},{1,1,0},{},{0,0,1},{1,1,1,1,1,0,1,1,1}};
   public static void main(String[]args){
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
-  }
+    System.out.println("countZeros2D");
+    System.out.println("[[0, 0, 0], [1, 1, 0], [], [0, 0, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1]] -> 7 | " + countZeros2D(arr1));
 
+  }
   //0. Include your prior methods to help you print a 1D/2D array of ints.
-  public static String arrToString(int[]ary){
-    return "";
+  public static String arrToString(int[]arr){
+    return Arrays.toString(arr);
   }
 
   //The name of different methods can be the same,
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
-  public static String arrToString(int[][]ary){
-    return "";
+  public static String arrToString(int[][]arr){
+    return Arrays.toString(arr);
   }
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int c = 0;
+    for(int[] i : nums){
+      for(int j : i){
+        if(j==0) c+= 1;
+      }
+    }
+    return c;
   }
 
   //2. Calculate the sum of a 2d array

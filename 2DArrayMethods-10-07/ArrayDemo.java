@@ -10,6 +10,9 @@ public class ArrayDemo{
     System.out.println("countZeros2D");
     System.out.println("[[0, 0, 0], [1, 1, 0], [], [0, 0, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1]] -> 7 | " + countZeros2D(arr1));
 
+    System.out.println("arr2DSum");
+    System.out.println("[[0, 0, 0], [1, 1, 0], [], [0, 0, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1]] -> 11 | " + arr2DSum(arr1));
+
   }
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]arr){
@@ -37,8 +40,19 @@ public class ArrayDemo{
   //2. Calculate the sum of a 2d array
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
-  public static int arr2DSum(int[][]nums){
-    return 0;
+  public static int arrSum(int[] arr){
+    int c = 0;
+    for(int i : arr){
+      c += i;
+    }
+    return c;
+  }
+  public static int arr2DSum(int[][] arr){
+    int c = 0;
+    for(int[] i : arr){
+      c += arrSum(i);
+    }
+    return c;
   }
 
   //3. Modify a given 2D array of integer as follows:

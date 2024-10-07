@@ -61,10 +61,10 @@ public class ArrayMethods{
         System.out.println("arr2DToStr");
         System.out.println("[[1, 2, 3], [4, 5, 6], [7, 8, 9]]" + " | " + arr2DToStr(arr1));
         System.out.println("arr2DSum");
-        System.out.println(arr2DSum(arr1) + "| 45");
-        System.out.println(arr2DSum(arr2) + "| 45");
-        System.out.println(arr2DSum(arr3) + "| 0");
-        System.out.println(arr2DSum(arr4) + "| 0");
+        System.out.println(arr2DSum(arr1) + " | 45");
+        System.out.println(arr2DSum(arr2) + " | 45");
+        System.out.println(arr2DSum(arr3) + " | 0");
+        System.out.println(arr2DSum(arr4) + " | 0");
         System.out.println("swapRC");
         System.out.println(arr2DToStr(swapRC(new int[][]{{1,2,3},{4,5,6}})) + " | [[1,4],[2,5],[3,6]]");
 

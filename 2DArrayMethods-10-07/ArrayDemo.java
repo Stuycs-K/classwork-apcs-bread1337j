@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 public class ArrayDemo{
   static int[][] arr1 = new int[][]{{0,0,0},{1,1,0},{},{0,0,1},{1,1,1,1,1,0,1,1,1}};
   static int[][] arr2 = new int[][]{{-1, -2, 3}, {4, -5, 6}, {7, 8, -9}};
@@ -14,8 +15,12 @@ public class ArrayDemo{
     System.out.println("arr2DSum");
     System.out.println("[[0, 0, 0], [1, 1, 0], [], [0, 0, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1]] -> 11 | " + arr2DSum(arr1));
 
+    System.out.println("replaceNegative");
     replaceNegative(arr2);
     System.out.println("[[1, 0, 3], [4, 1, 6], [7, 8, 1]] | " + arrToString(arr2));
+
+    System.out.println("htmlTable");
+    System.out.println("<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table> | " + htmlTable(new int[][]{{1,2},{3}}) + " | " + "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>".equals(htmlTable(new int[][]{{1,2},{3}}))); //java's shortest line of code
   }
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]arr){
@@ -126,12 +131,15 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    String why = new String();
-
-    for(int[] aaaaa : nums){
-        
-
+    String why = "<table>";
+    for(int[] aaaaa : nums) {
+        why += "<tr>";
+        for (int bbbbb : aaaaa) {
+            why += "<td>" + bbbbb + "</td>";
+        }
+        why += "</tr>";
     }
+    return why + "</table>";
 
   }
 }

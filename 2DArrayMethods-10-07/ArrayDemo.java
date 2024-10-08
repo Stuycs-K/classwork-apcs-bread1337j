@@ -91,16 +91,33 @@ public class ArrayDemo{
   //DO NOT use any built in methods that "copy" an array.
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
-  public static int[][] copy(int[][] nums){
-    return new int[1][1];
-  }
+  public static int[] copy(int[] arr){
+        int[] copylst = new int[arr.length];
+        for(int i=0; i<arr.length; i++){
+            copylst[i] = arr[i];
+        }
+        return copylst;
+    }
+    public static int[][] copy(int[][] nums){
+        int[][] copylst = new int[nums.length][];
+        for(int i=0; i<nums.length; i++){
+            copylst[i] = copy(nums[i]);
+        }
+        return copylst;
+    }
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
-  }
+        int[][] arr = new int[nums[0].length][nums.length];
+        for(int i=0; i < nums[0].length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                arr[i][j] = nums[j][i];
+            }
+        }
+        return arr;
+    }
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
   //   tr tags around each row, and td tags around each value.
@@ -109,6 +126,12 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String why = new String();
+
+    for(int[] aaaaa : nums){
+        
+
+    }
+
   }
 }

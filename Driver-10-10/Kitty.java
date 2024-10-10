@@ -14,7 +14,7 @@ public class Kitty {
 
     public int getAge(){
         return age;
-    }
+    }//a
 
 
 

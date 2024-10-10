@@ -26,8 +26,12 @@ public class Driver{
 //should print "Katya is 5 years old."
 //should print "Aytak is 3 years old."a
         System.out.println(b);
+
+        JohnTests Tester = new JohnTests(2);
         b.changeName("aaaaaaaaaaaa");
-        JohnTests.test("Katya", a.getName());
-        JohnTests.test("Aytak", b.getName());
+        Tester.test("Katya", a.getName());
+        Tester.test("Aytak", b.getName());
+        Tester.fire();
+        Tester.fire();
     }
 }

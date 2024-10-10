@@ -26,6 +26,9 @@ public class Kitty {
         name = str;
     }
 
+    public String toString(){
+        return("{" + name + "; " + age + "}");
+    }
 
 
 

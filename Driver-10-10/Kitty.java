@@ -1,13 +1,16 @@
 public class Kitty {
-    String name = "Mittens";
-    int age = 2;
+    private String name;
+    private int age;
 
 
-    public void Kitty(String nam, int ag){
+    public Kitty(String nam, int ag){
         name = nam;
         age = ag;
     }
-
+    public Kitty(){
+        name = "Mittens";
+        age = 2;
+    }
     public String getName(){
         return name;
     }
@@ -15,6 +18,13 @@ public class Kitty {
     public int getAge(){
         return age;
     }//a
+
+    public void makeOlder(){
+        age += 1;
+    }
+    public void changeName(String str){
+        name = str;
+    }
 
 
 

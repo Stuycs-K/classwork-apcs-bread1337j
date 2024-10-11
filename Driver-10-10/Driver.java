@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Driver{
-    public static void main(String[]args){
+    public static void main(String[]args) throws Exception {
 
 //makes a Kitty named Matcha that is 3 years old
         Kitty a = new Kitty("Matcha", 3);
@@ -35,11 +35,13 @@ public class Driver{
         Tester.queue("Aytak", b.getName());
         Tester.fire();
 
-        JohnTests te = new JohnTests(100);
+        JohnTests te = new JohnTests(101);
         Random rand = new Random();
-        for(int i=1; i<100; i++){
-            te.queue(rand.nextInt(i), rand.nextInt(i));
+        for(int i=0; i<100; i++){
+            te.queue(rand.nextInt(i+1), rand.nextInt(i+1));
         }
         te.fire();
+        Tester.fire();
+        JohnTests err = new JohnTests(-1);
     }
 }

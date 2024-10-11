@@ -1,9 +1,14 @@
+import jdk.jshell.spi.ExecutionControlProvider;
+
 public class JohnTests {
     private String[] expected;
     private String[] out;
     private int index = 0;
     int length = 100;
-    public JohnTests(int len){
+    public JohnTests(int len) throws Exception{
+        if(!(len>0)){
+            throw new Exception("Can't have tester with len < 0");
+        }
         expected = new String[len];
         out = new String[len];
         length = len;

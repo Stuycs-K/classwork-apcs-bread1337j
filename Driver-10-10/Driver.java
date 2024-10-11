@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Driver{
     public static void main(String[]args){
 
@@ -29,9 +31,15 @@ public class Driver{
 
         JohnTests Tester = new JohnTests(2);
         b.changeName("aaaaaaaaaaaa");
-        Tester.test("Katya", a.getName());
-        Tester.test("Aytak", b.getName());
+        Tester.queue("Katya", a.getName());
+        Tester.queue("Aytak", b.getName());
         Tester.fire();
-        Tester.fire();
+
+        JohnTests te = new JohnTests();
+        Random rand = new Random();
+        for(int i=1; i<100; i++){
+            te.queue("" + rand.nextInt(i), "" + rand.nextInt(i));
+        }
+        te.fire();
     }
 }

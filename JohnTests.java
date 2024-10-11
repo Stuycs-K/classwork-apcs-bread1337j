@@ -28,7 +28,7 @@ public class JohnTests {
 
     public void fire(){
         System.out.println("Expected:                     | Result:                      | Correct?");
-        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("------------------------------|------------------------------|---------");
         int c = 0;
         for(int i=0; i<expected.length; i++) {if (expected[i]!=null){
             int len = 30 - expected[i].length();
@@ -42,9 +42,9 @@ public class JohnTests {
             System.out.println(expected[i] + multstring(" ", len) + "| " + out[i] + multstring(" ", len2) + "| " + expected[i].equals(out[i]));
             if (expected[i].equals(out[i])) c += 1;
         }}
-        System.out.println("                                                             | % Correct: " + 100 * (double)c / expected.length);
+        System.out.println("                              |                              | % Correct: " + 100 * (double)c / expected.length);
         expected = new String[length];                                                             //
         out = new String[length];
-        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("------------------------------|------------------------------|---------");
     }
 }

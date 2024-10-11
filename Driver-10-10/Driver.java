@@ -35,9 +35,9 @@ public class Driver{
         Tester.queue("Aytak", b.getName());
         Tester.fire();
 
-        JohnTests te = new JohnTests();
+        JohnTests te = new JohnTests(100000);
         Random rand = new Random();
-        for(int i=1; i<100; i++){
+        for(int i=1; i<100000; i++){
             te.queue(rand.nextInt(i), rand.nextInt(i));
         }
         te.fire();

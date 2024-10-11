@@ -38,7 +38,7 @@ public class Driver{
         JohnTests te = new JohnTests();
         Random rand = new Random();
         for(int i=1; i<100; i++){
-            te.queue("" + rand.nextInt(i), "" + rand.nextInt(i));
+            te.queue(rand.nextInt(i), rand.nextInt(i));
         }
         te.fire();
     }

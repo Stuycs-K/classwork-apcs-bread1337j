@@ -20,9 +20,9 @@ public class JohnTests {
         }
         return out;
     }
-    public void queue(String e, String o){
-        expected[index] = e;
-        out[index] = o;
+    public void queue(Object e, Object o){
+        expected[index] = "" + e;
+        out[index] = "" + o;
         index += 1;
     }
 

@@ -27,8 +27,8 @@ public class JohnTests {
     }
 
     public void fire(){
-        System.out.println("Expected:                     | Result:                      | Correct?");
-        System.out.println("------------------------------|------------------------------|---------");
+        System.out.println("Test # |Expected:                      | Result:                      | Correct?");
+        System.out.println("-------|-------------------------------|------------------------------|---------");
         int c = 0;
         for(int i=0; i<expected.length; i++) {if (expected[i]!=null){
             int len = 30 - expected[i].length();
@@ -39,12 +39,12 @@ public class JohnTests {
             if (len2 < 0) {
                 len2 = 0;
             } //could definitely be written better if needed, however it is not needed.
-            System.out.println(expected[i] + multstring(" ", len) + "| " + out[i] + multstring(" ", len2) + "| " + expected[i].equals(out[i]));
+            System.out.println(i + multstring(" ", 7-("" + i).length()) + "| " + expected[i] + multstring(" ", len) + "| " + out[i] + multstring(" ", len2) + "| " + expected[i].equals(out[i]));
             if (expected[i].equals(out[i])) c += 1;
         }}
-        System.out.println("                              |                              | % Correct: " + 100 * (double)c / expected.length);
+        System.out.println("       |                               |                              | % Correct: " + 100 * (double)c / expected.length);
         expected = new String[length];                                                             //
         out = new String[length];
-        System.out.println("------------------------------|------------------------------|---------");
+        System.out.println("-------|-------------------------------|------------------------------|---------");
     }
 }

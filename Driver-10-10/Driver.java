@@ -1,7 +1,9 @@
 import Util.Brainrotlib;
 import Util.JohnTests;
 
+import java.sql.Time;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Driver{
     public static void main(String[]args) throws Exception {
@@ -36,15 +38,29 @@ public class Driver{
         b.changeName("aaaaaaaaaaaa");
         Tester.queue("Katya", a.getName());
         Tester.queue("Aytak", b.getName());
-        Tester.fire();
+        //Tester.fireScreen();
 
-        JohnTests te = new JohnTests(101);
+
+        JohnTests te = new JohnTests();
         Random rand = new Random();
-        for(int i=0; i<100; i++){
-            te.queue(rand.nextInt(i+1), rand.nextInt(i+1));
+        for(int j=0; j<10000; j++) {
+            for (int i = 0; i < 100; i++) {
+                te.queue(rand.nextInt(i + 1), rand.nextInt(i + 1));
+            }
+            if(te.fireScreen() > 50) {
+                TimeUnit.SECONDS.sleep(10);
+            }else{
+                TimeUnit.MILLISECONDS.sleep(1);
+            }
         }
-        te.fire();
-        Tester.fire();
-        JohnTests err = new JohnTests(-1);
+        /*TimeUnit.SECONDS.sleep(1);
+
+        JohnTests AlwaysCorrect = new JohnTests();
+        for(int i=0; i<100; i++){
+            AlwaysCorrect.queue(i, i);
+        }
+        AlwaysCorrect.fireScreen();*/
+        //Tester.fire();
+        //JohnTests err = new JohnTests(-1);
     }
 }

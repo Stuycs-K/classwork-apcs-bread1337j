@@ -1,3 +1,6 @@
+import Util.Brainrotlib;
+import Util.JohnTests;
+
 import java.util.Random;
 
 public class Driver{
@@ -5,7 +8,7 @@ public class Driver{
 
 //makes a Kitty named Matcha that is 3 years old
         Kitty a = new Kitty("Matcha", 3);
-        System.out.println(a);
+        Brainrotlib.print(a);
 
 //makes a Kitty named Mittens that is 2 years old
         Kitty b = new Kitty();

@@ -68,6 +68,7 @@ public class JohnTests extends JScrollPane {
         index += 1;
     }
 
+
     public void fire(){
         System.out.println("Test # |Expected:                      | Result:                      | Correct?");
         System.out.println("-------|-------------------------------|------------------------------|---------");
@@ -124,7 +125,7 @@ public class JohnTests extends JScrollPane {
         pn.add(iHateThis("-------|-------------------------------|------------------------------|---------"));
 
         if(percentcorrect != 100) {
-            Brainrotlib.print("abfkjfasbkfjhnafs");
+            //Brainrotlib.print("abfkjfasbkfjhnafs");
             pn.setBackground(new Color(255 -(int)(percentcorrect*2.5), 0+(int)(percentcorrect*2), 0));
         }
         else{

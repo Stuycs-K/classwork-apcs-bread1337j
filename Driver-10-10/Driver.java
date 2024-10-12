@@ -34,33 +34,16 @@ public class Driver{
 //should print "Aytak is 3 years old."a
         System.out.println(b);
 
-        JohnTests Tester = new JohnTests(2);
+        JohnTests Tester = new JohnTests(7);
         b.changeName("aaaaaaaaaaaa");
         Tester.queue("Katya", a.getName());
         Tester.queue("Aytak", b.getName());
-        //Tester.fireScreen();
+        Tester.queue(a, a);
+        Tester.queue(b, b);
+        Tester.queue(a, b);
+        Tester.queue(a.getAge(), 5);
+        Tester.queue(b.getAge(), 3);
+        Tester.fireScreen();
 
-
-        JohnTests te = new JohnTests();
-        Random rand = new Random();
-        for(int j=0; j<10000; j++) {
-            for (int i = 0; i < 100; i++) {
-                te.queue(rand.nextInt(i + 1), rand.nextInt(i + 1));
-            }
-            if(te.fireScreen() > 50) {
-                TimeUnit.SECONDS.sleep(10);
-            }else{
-                TimeUnit.MILLISECONDS.sleep(1);
-            }
-        }
-        /*TimeUnit.SECONDS.sleep(1);
-
-        JohnTests AlwaysCorrect = new JohnTests();
-        for(int i=0; i<100; i++){
-            AlwaysCorrect.queue(i, i);
-        }
-        AlwaysCorrect.fireScreen();*/
-        //Tester.fire();
-        //JohnTests err = new JohnTests(-1);
     }
 }

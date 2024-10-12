@@ -76,13 +76,27 @@ public class JohnTests extends JScrollPane {
         for(int i=0; i<expected.length; i++) {if (expected[i]!=null){
             int len = 30 - expected[i].length();
             if (len < 0) {
+
                 len = 0;
             }
-            int len2 = 29 - out[i].length();
+            int len2 = 30 - out[i].length();
             if (len2 < 0) {
+
                 len2 = 0;
-            } //could definitely be written better if needed, however it is not needed.
-            System.out.println(i + multstring(" ", 7-("" + i).length()) + "| " + expected[i] + multstring(" ", len) + "| " + out[i] + multstring(" ", len2) + "| " + expected[i].equals(out[i]));
+            }//could definitely be written better if needed, however it is not needed.
+
+            String exp = expected[i];
+            String o = out[i];
+            if (expected[i].length() > 30) {
+                Brainrotlib.print("a");
+                exp = expected[i].substring(0, 27) + "...";
+            }
+            if (out[i].length() > 30){
+                o = out[i].substring(0, 27) + "...";
+            }
+
+
+            System.out.println(i + multstring(" ", 7-("" + i).length()) + "| " + exp + multstring(" ", len) + "| " + o + multstring(" ", len2) + "| " + expected[i].equals(out[i]));
             if (expected[i].equals(out[i])) c += 1;
         }}
         System.out.println("       |                               |                              | % Correct: " + 100 * (double)c / expected.length);
@@ -99,8 +113,8 @@ public class JohnTests extends JScrollPane {
         pn.removeAll();
         configStuff(); // config the JFrame
 
-        pn.add(iHateThis("Test # |Expected:                      | Result:                      | Correct?"));
-        pn.add(iHateThis("-------|-------------------------------|------------------------------|---------"));
+        pn.add(iHateThis("Test # |Expected:                      | Result:                       | Correct?"));
+        pn.add(iHateThis("-------|-------------------------------|-------------------------------|---------"));
         int c = 0;
         int real = 0;
         for(int i=0; i<expected.length; i++) {if (expected[i]!=null){real+=1;
@@ -108,21 +122,32 @@ public class JohnTests extends JScrollPane {
             if (len < 0) {
                 len = 0;
             }
-            int len2 = 29 - out[i].length();
+            int len2 = 30 - out[i].length();
             if (len2 < 0) {
                 len2 = 0;
             } //could definitely be written better if needed, however it is not needed.
 
-            pn.add(iHateThis(i + multstring(" ", 7-("" + i).length()) + "| " + expected[i] + multstring(" ", len) + "| " + out[i] + multstring(" ", len2) + "| " + expected[i].equals(out[i])));
+            String exp = expected[i];
+            String o = out[i];
+            if (expected[i].length() > 30) {
+                Brainrotlib.print("a");
+                exp = expected[i].substring(0, 27) + "...";
+            }
+            if (out[i].length() > 30){
+                o = out[i].substring(0, 27) + "...";
+            }
+
+
+            pn.add(iHateThis(i + multstring(" ", 7-("" + i).length()) + "| " + exp + multstring(" ", len) + "| " + o + multstring(" ", len2) + "| " + expected[i].equals(out[i])));
             if (expected[i].equals(out[i])) c += 1;
         }}
         double percentcorrect = 100 * (double)c / real;
 
-        pn.add(iHateThis("       |                               |                              | % Correct: " + percentcorrect));
+        pn.add(iHateThis("       |                               |                               | % Correct: " + percentcorrect));
         expected = new String[length];                                                             //
         out = new String[length];
         index = 0;
-        pn.add(iHateThis("-------|-------------------------------|------------------------------|---------"));
+        pn.add(iHateThis("-------|-------------------------------|-------------------------------|---------"));
 
         if(percentcorrect != 100) {
             //Brainrotlib.print("abfkjfasbkfjhnafs");

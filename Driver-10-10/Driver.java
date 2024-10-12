@@ -34,7 +34,7 @@ public class Driver{
 //should print "Aytak is 3 years old."a
         System.out.println(b);
 
-        JohnTests Tester = new JohnTests(7);
+        JohnTests Tester = new JohnTests(8);
         b.changeName("aaaaaaaaaaaa");
         Tester.queue("Katya", a.getName());
         Tester.queue("Aytak", b.getName());
@@ -43,6 +43,7 @@ public class Driver{
         Tester.queue(a, b);
         Tester.queue(a.getAge(), 5);
         Tester.queue(b.getAge(), 3);
+        Tester.queue("lkafnkjnafskjanfskfsakjafsnkafshnafkshnafskjhnasfkjhnarkejjhalisehaleshnklasehnasjeh", "eouruioujkvlkkopitoursojgorjsogs");
         Tester.fireScreen();
 
     }

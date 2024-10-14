@@ -69,7 +69,7 @@ public class JohnTests extends JScrollPane {
     }
 
 
-    public void fire(){
+    public void fireWrapped(){
         System.out.println("Test # |Expected:                      | Result:                      | Correct?");
         System.out.println("-------|-------------------------------|------------------------------|---------");
         int c = 0;
@@ -100,8 +100,7 @@ public class JohnTests extends JScrollPane {
             if (expected[i].equals(out[i])) c += 1;
         }}
         System.out.println("       |                               |                              | % Correct: " + 100 * (double)c / expected.length);
-        expected = new String[length];                                                             //
-        out = new String[length];
+
         System.out.println("-------|-------------------------------|------------------------------|---------");
     }
     public void fireLong(){
@@ -129,8 +128,6 @@ public class JohnTests extends JScrollPane {
             if (expected[i].equals(out[i])) c += 1;
         }}
         System.out.println("       |                               |                              | % Correct: " + 100 * (double)c / expected.length);
-        expected = new String[length];                                                             //
-        out = new String[length];
         System.out.println("-------|-------------------------------|------------------------------|---------");
     }
     private JLabel iHateThis(String text){
@@ -173,9 +170,7 @@ public class JohnTests extends JScrollPane {
         double percentcorrect = 100 * (double)c / real;
 
         pn.add(iHateThis("       |                               |                               | % Correct: " + percentcorrect));
-        expected = new String[length];                                                             //
-        out = new String[length];
-        index = 0;
+
         pn.add(iHateThis("-------|-------------------------------|-------------------------------|---------"));
 
         if(percentcorrect != 100) {
@@ -189,5 +184,26 @@ public class JohnTests extends JScrollPane {
         return percentcorrect;
 
     }
+
+
+    public void fire(int Type, boolean Wipe){
+        if(Type == 0) {
+            fireWrapped();
+        }
+        else if(Type == 1){
+            fireScreen();
+        }
+        else if(Type == 2){
+            fireLong();
+        }
+
+        if(Wipe){
+            expected = new String[length];                                                             //
+            out = new String[length];
+            index = 0;
+        }
+    }
+
+
 
 }

@@ -44,7 +44,7 @@ public class Driver{
         Tester.queue(a.getAge(), 5);
         Tester.queue(b.getAge(), 3);
         Tester.queue("lkafnkjnafskjanfskfsakjafsnkafshnafkshnafskjhnasfkjhnarkejjhalisehaleshnklasehnasjeh", "eouruioujkvlkkopitoursojgorjsogs");
-        Tester.fireScreen();
+        Tester.fire(1, true);
 
     }
 }

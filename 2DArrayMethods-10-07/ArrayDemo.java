@@ -20,7 +20,7 @@ public class ArrayDemo{
     Tester.queue("[[1, 0, 3], [4, 1, 6], [7, 8, 1]]", arrToString(arr2));
 
     Tester.queue("<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>", htmlTable(new int[][]{{1,2},{3}}));
-    Tester.fireScreen();
+    Tester.fire(1, true);
   }
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]arr){

@@ -1,3 +1,6 @@
+import Util.*;
+
+
 public class Demo{
 
   /*
@@ -8,12 +11,15 @@ public class Demo{
     return a.distanceTo(b);
   }
 
-  public static void main(String[]args){
+  public static void main(String[]args) throws Exception{
     Point p1 = new Point(1,1);
     Point p2 = new Point(-1,-1);
     Point p3 = new Point(3,4);
-    System.out.println( p3+ " with expected value of: " + "(" + p3.getX() + ",  " + p3.getY() + ")");
-    System.out.println( distance(p1,p2) + " with expected value of: " + Math.sqrt(8));
-    System.out.println( Point.distance(p1,p2)+ " with expected value of: " + Math.sqrt(8));
-    System.out.println( p1.distanceTo(p2)+ " with expected value of: " + Math.sqrt(8));}
+    JohnTests Tester = new JohnTests(4);
+    Tester.queue( p3, "(3.0, 4.0)");
+    Tester.queue( distance(p1,p2), Math.sqrt(8));
+    Tester.queue( Point.distance(p1,p2), Math.sqrt(8));
+    Tester.queue( p1.distanceTo(p2), Math.sqrt(8));
+    Tester.fire(1, true);
+    }
 }

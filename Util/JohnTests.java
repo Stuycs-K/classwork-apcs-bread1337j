@@ -88,7 +88,6 @@ public class JohnTests extends JScrollPane {
             String exp = expected[i];
             String o = out[i];
             if (expected[i].length() > 30) {
-                Brainrotlib.print("a");
                 exp = expected[i].substring(0, 27) + "...";
             }
             if (out[i].length() > 30){

@@ -1,4 +1,4 @@
-package JohnTests;
+package Util;
 
 import org.w3c.dom.css.RGBColor;
 

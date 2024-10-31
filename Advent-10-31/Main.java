@@ -24,7 +24,10 @@ public class Main{
 			File file = new File("File");
 			Scanner input = new Scanner(file);
 			while(input.hasNextLine()){
-				System.out.println(input.nextLine());
+				String s = input.nextLine();
+				if(s.contains("{")){
+					System.out.println(s);
+				}
 				if(input.hasNextLine()){
 					input.nextLine();
 				}

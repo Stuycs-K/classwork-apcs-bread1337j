@@ -1,6 +1,4 @@
-package Util;
-
-import java.util.*;
+package src.Util;
 
 public class JohnTimer{
 	private double time = 0; 
@@ -15,7 +13,7 @@ public class JohnTimer{
 		
 	}
 	public void record(){
-		time += System.nanoTime()-timer;
+		time = System.nanoTime()-timer;
 		avg *= times;
 		avg += time;
 		times += 1;

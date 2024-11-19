@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 import java.io.*;
 
@@ -14,6 +15,7 @@ public class Problem1{
 //	}
 	static int dir = 0;
 	static int[][] dirs = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
+	static ArrayList<Integer[]> memory = new ArrayList<Integer[]>(500);
 	public static int[] getDir(int dir){
 		if(dir<0){
 			dir += 4;
@@ -43,13 +45,33 @@ public class Problem1{
 				if(s.charAt(0) == 'L'){
 					dir += 1;
 					//System.out.println("L");
-					x = x + getDir(dir)[0] * dist;	
-					y = y + getDir(dir)[1] * dist;
+					for(int i=0; i<dist; i++) {
+						x = x + getDir(dir)[0];
+						y = y + getDir(dir)[1];
+						Integer[] cord = new Integer[]{Integer.valueOf(x), Integer.valueOf(y)};
+						if(memory.indexOf(cord) == -1){
+							memory.add(cord);
+						}else{
+							System.out.println(x+y);
+							System.out.println(memory.indexOf(cord));
+							System.exit(1);
+						}
+					}
 				}else if(s.charAt(0) == 'R') {
 					dir -= 1;
 					System.out.println("R, " + dist + " | " + Arrays.toString(getDir(dir)));
-					x = x + getDir(dir)[0] * dist;
-					y = y + getDir(dir)[1] * dist;
+					for(int i=0; i<dist; i++) {
+						x = x + getDir(dir)[0];
+						y = y + getDir(dir)[1];
+						Integer[] cord = new Integer[]{Integer.valueOf(x), Integer.valueOf(y)};
+						if(memory.indexOf(cord) == -1){
+							memory.add(cord);
+						}else{
+							System.out.println(x+y);
+							System.out.println(memory.indexOf(cord));
+							System.exit(1);
+						}
+					}
 				}
 				else{
 					System.out.println(s + " " + s.charAt(0) + " " + s.charAt(1));

@@ -10,7 +10,7 @@ public class ColorDemo{
 					System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m ");
 				}try{TimeUnit.MILLISECONDS.sleep(10);}catch(Exception e){}
 				
-				//System.out.println("\u001b[H");
+				//System.out.println("\u001b[H") ;
   			}
     		System.out.println();
 		}

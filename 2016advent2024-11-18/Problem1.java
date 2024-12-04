@@ -2,13 +2,6 @@ import java.lang.reflect.Array;
 import java.util.*;
 import java.io.*;
 
-class Intgr{
-	int x;
-	public String toString(){
-		return("" + x);	
-	}
-
-}
 public class Problem1{
 	//static int[] dir = new int[]{0, 1};
 	//static int[] matrix1 = new int[]{0, -1, 1, 0};

@@ -1,5 +1,5 @@
 public class Text{
-    //MODIFIERS
+    //MODIFIERS//
     public static final int BRIGHT = 1;
     public static final int DARK = 2;
     public static final int ITALICS = 3;

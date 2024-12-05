@@ -5,7 +5,8 @@ public class Driver{
 
 
 
-        System.out.println(Text.RED + "AAAAAA");
+        Text.color(Text.RED);
+        System.out.println("nvm");
         System.out.println(Text.RESET);
     }
 }

@@ -51,8 +51,8 @@ public class Skibidi extends Adventurer{
 	}
 	public String attack(Adventurer other){
 		int damage = 5000-this.getHP() + this.getSpecial() * this.getSpecialMax();
-		other.setHP(other.getHP()-damage);
-		this.setHP(this.getHP()-damage);
+		other.applyDamage(damage);
+		this.applyDamage(damage);
 		return("Was attacked: " + other.getHP() + "Not attacked: "  + this.getHP());
 	
 	}

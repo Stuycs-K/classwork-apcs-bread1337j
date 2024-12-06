@@ -28,7 +28,18 @@ public class Driver{
                 System.out.print(" ");
             }
         }
-
+        Text.go(10, 70);
+        for(int i=0; i<30; i++){
+            int num = rand.nextInt(100);
+            if(num<25){
+                Text.color(Text.RED);
+            } else if (num>75) {
+                Text.color(Text.GREEN);
+            }else{
+                Text.color(Text.WHITE);
+            }
+            System.out.print(num + " ");
+        }
         System.out.println(Text.RESET);
     }
 }

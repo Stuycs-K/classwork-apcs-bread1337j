@@ -11,7 +11,7 @@ public class Skibidi extends Adventurer{
 	}
 
 	public String getSpecialName(){
-		return "Skibidi " + super.getName();
+		return "Skibidi aura";
 	}
 
 	public int getSpecial(){

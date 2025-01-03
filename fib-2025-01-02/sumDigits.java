@@ -30,6 +30,7 @@ public class sumDigits {
 		//System.out.println(sumDigits(251));
 		//System.out.println(sumDigits(123));
 		//System.out.println(getDigit(14923, 1)); // 2
+		System.out.println("Recursively calculating the " + args[0] + "nth fibonacci number");
 		System.out.println(fib(Integer.parseInt(args[0])));
 	}
 }
